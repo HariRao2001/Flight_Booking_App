@@ -1,0 +1,174 @@
+{
+  "usersDetails": [
+    {
+      "id": "66d5",
+      "name": "manikanta nelli",
+      "password": "Manikanta@2001",
+      "address": "kota,ap,524411",
+      "passportNumber": "dgwhdhuiqw",
+      "dob": "2023-01-04",
+      "country": "India"
+    }
+  ],
+  "bookingsData": [
+    {
+      "id": "afa8",
+      "airplaneId": "IND272",
+      "airplaneTravellingDetails": {
+        "from": "GOA(Goa)",
+        "to": "HYD(Hyderabad)"
+      },
+      "airplaneClass": "Business",
+      "price": "7000",
+      "duration": "03hr 40min",
+      "airportNames": {
+        "from": "Manohar International Airport, Goa",
+        "to": "Rajiv Gandhi International Airport, Hyderabad"
+      },
+      "airplaneTimings": {
+        "start": "19:00",
+        "end": "22:40"
+      },
+      "passengersCount": "3",
+      "orderedDate": "2024-12-03T13:54:36.975Z",
+      "flightDate": "2024-12-05",
+      "ticketId": "8144527864195641",
+      "selectedSeats": [
+        "1A",
+        "3A",
+        "2B"
+      ],
+      "userId": "66d5"
+    },
+    {
+      "id": "8113",
+      "airplaneId": "IND272",
+      "airplaneTravellingDetails": {
+        "from": "GOA(Goa)",
+        "to": "HYD(Hyderabad)"
+      },
+      "airplaneClass": "Business",
+      "price": "7000",
+      "duration": "03hr 40min",
+      "airportNames": {
+        "from": "Manohar International Airport, Goa",
+        "to": "Rajiv Gandhi International Airport, Hyderabad"
+      },
+      "airplaneTimings": {
+        "start": "19:00",
+        "end": "22:40"
+      },
+      "passengersCount": "1",
+      "orderedDate": "2024-12-03T13:56:27.036Z",
+      "flightDate": "2024-12-05",
+      "ticketId": "025032258077723135",
+      "selectedSeats": [
+        "2A"
+      ],
+      "userId": "66d5"
+    },
+    {
+      "id": "95b7",
+      "airplaneId": "IND253",
+      "airplaneTravellingDetails": {
+        "from": "(HYD)Hyderabad",
+        "to": "(GOA)Goa"
+      },
+      "airplaneClass": "Economy",
+      "price": "8000",
+      "duration": "03hr 00min",
+      "airportNames": {
+        "from": "Rajiv Gandhi International Airport, Hyderabad",
+        "to": "Manohar International Airport, Goa"
+      },
+      "airplaneTimings": {
+        "start": "17:00",
+        "end": "20:00"
+      },
+      "passengersCount": "1",
+      "orderedDate": "2024-12-03T14:24:48.894Z",
+      "flightDate": "2024-12-03",
+      "ticketId": "3670264254643283",
+      "selectedSeats": [
+        "10C"
+      ],
+      "userId": "66d5"
+    },
+    {
+      "id": "4540",
+      "airplaneId": "IND173",
+      "airplaneTravellingDetails": {
+        "from": "(CHN)Chennai",
+        "to": "(MBI)Mumbai"
+      },
+      "airplaneClass": "Economy",
+      "price": "8700",
+      "duration": "03hr 40min",
+      "airportNames": {
+        "from": "Chennai International Airport, Chennai",
+        "to": "Chattrapathi Shivaji Interantional Airport, Mumbai"
+      },
+      "airplaneTimings": {
+        "start": "13:20",
+        "end": "17:00"
+      },
+      "passengersCount": "1",
+      "orderedDate": "2024-12-03T17:50:01.159Z",
+      "flightDate": "2024-12-05",
+      "ticketId": "5340973463114942",
+      "selectedSeats": [
+        "1C"
+      ],
+      "userId": "66d5",
+      "userName": "manikanta nelli"
+    }
+  ],
+  "IND123": {},
+  "IND122": {},
+  "IND113": {},
+  "IND112": {},
+  "IND103": {},
+  "IND102": {},
+  "IND143": {},
+  "IND142": {},
+  "IND153": {},
+  "IND152": {},
+  "IND163": {
+    "2024-12-05": []
+  },
+  "IND162": {},
+  "IND173": {
+    "2024-12-05": [
+      "1C"
+    ]
+  },
+  "IND172": {},
+  "IND183": {},
+  "IND182": {},
+  "IND223": {},
+  "IND222": {},
+  "IND243": {},
+  "IND242": {},
+  "IND253": {
+    "2024-12-04": [
+      "10C"
+    ]
+  },
+  "IND252": {
+    "2024-12-05": []
+  },
+  "IND263": {},
+  "IND262": {},
+  "IND273": {
+    "2024-12-05": [],
+    "2024-12-06": []
+  },
+  "IND272": {
+    "2024-12-05": [
+      "1A",
+      "3A",
+      "2B",
+      "2A"
+    ]
+  }
+}
