@@ -46,11 +46,11 @@ export default function SidePanel(){
             </div>
             <div>
                 <img src={supportIcon} alt="image_not_found"/>
-                <Link to="">Support</Link>
+                <Link to="/support">Support</Link>
             </div>
             <div>
                 <img src={RateusIcon} alt="image_not_found"/>
-                <Link to="">Rate Us</Link>
+                <Link to="/rating">Rate Us</Link>
             </div>
             <hr />
             <div>

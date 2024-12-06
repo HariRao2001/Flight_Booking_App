@@ -41,7 +41,7 @@ export default function MyBookings(){
         catch(error){
             console.error(error);
         }
-    },[dispatch]);
+    },[dispatch, navigate]);
 
     return<div className="boarding_pass_block">
         <div className="boardingpass_header_block">
@@ -109,9 +109,31 @@ export default function MyBookings(){
                                 </tbody>
                             </table>
                             <hr />
+                            <table className="passenger_details_block">
+                                <thead>
+                                    <tr>
+                                        <th>Passenger Name</th>
+                                        <th>Passenger Age</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        airplane.passengerSeatConfigurationDetails.map(passenger=><tr key={passenger.seatNo}>
+                                            <td>{passenger.personName}</td>
+                                            <td>{passenger.personAge}</td>
+                                        </tr>)
+                                    }
+                                </tbody>
+                            </table>
+                            <hr />
+                            <div>
+                                <b>Total Cost: </b><span>{airplane.price * airplane.passengersCount}</span>
+                            </div>
                             <button className="download_button">Download</button>
-                            <Link to="/home">Book another flight</Link>
+                            <Link to="/flightbooking">Book another flight</Link>
+                            <hr />
                         </div>
+
                     })
                 }
         </>

@@ -15,6 +15,8 @@ import { bookingActions } from "../../store/createSore";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import FlightBooking from "../FlightBooking/FlightBooking";
 
+import { useEffect } from "react"; 
+
 
 export default function PaymentPage(){
     const [error, setError]= useState("");
@@ -26,7 +28,11 @@ export default function PaymentPage(){
     const flightData = useSelector(state=>state.selectedFlightDetails);
     const selectedSeats = useSelector(state=>state.selectedSeats);
     const userDetails = useSelector(state=>state.userDetails);
+    const passengerDetails =  useSelector(state=>state.passengerDetails);
 
+    useEffect(()=>{
+        
+    })
 
 
     function getCurrentDate(){
@@ -78,7 +84,11 @@ export default function PaymentPage(){
         }
 
         setError("");
-        
+
+        const passengerSeatConfigurationDetails =selectedSeats.map((seatNo, index)=>{
+            return { seatNo, personName: passengerDetails[`passenger${index+1}name`], personAge: passengerDetails[`passenger${index+1}age`]};
+        });
+
         const newObj = {...flightData};
         newObj.orderedDate = new Date();
         newObj.flightDate = passengerData.date;
@@ -86,7 +96,8 @@ export default function PaymentPage(){
         newObj.selectedSeats = selectedSeats;
         newObj.userId = localStorage.getItem("userid");
         newObj.userName = userDetails.name;
-
+        newObj.passengerDetails = passengerDetails;
+        newObj.passengerSeatConfigurationDetails = passengerSeatConfigurationDetails;
 
         //with the below fetch we just updating the newly booking details
         fetch("http://localhost:3000/bookingsData",{
@@ -102,25 +113,13 @@ export default function PaymentPage(){
                 return;
             }
             
-            return response.json();
-        })
-        .then(json=>{
-            // seatNumbers.map(innerArr=>{
-            //     innerArr.map(seats=>{
-            //         const index = selectedSeats.indexOf(seats.seatNo);
-            //         if(index !== -1){
-            //             seats.reserved = true;
-            //         }
-            //     })
-            // });
-            console.log(json);
             async function run(){
                 //with the below fetch we are retriving the flightdata based on the user selected flightid 
                 const response = await fetch(`http://localhost:3000/${flightData.airplaneId}`);
-                const previousJson = await response.json();
+                const updatedJson = await response.json();
 
                 //here concate the two arrays i.e, one array is the previousJson and the other array is the user selected seats then finally a new array is created.  
-                previousJson[passengerData.date] = previousJson[passengerData.date].concat(selectedSeats);
+                updatedJson[passengerData.date] = updatedJson[passengerData.date].concat(passengerSeatConfigurationDetails);
                 
                 //Here we are updating the data. i.e,,selected seats based on the flightid 
                 fetch(`http://localhost:3000/${flightData.airplaneId}`,{
@@ -128,7 +127,7 @@ export default function PaymentPage(){
                     headers: {
                         "Content-Type" : "application/json"
                     },
-                    body : JSON.stringify(previousJson)
+                    body : JSON.stringify(updatedJson)
                 })
                 .then(response=>{
                     if(!response.ok){

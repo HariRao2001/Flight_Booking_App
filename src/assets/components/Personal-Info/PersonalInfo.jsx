@@ -80,11 +80,7 @@ export default function PersonalInfo(){
                             if(!response.ok){
                                 setError("Something went wrong.please try again");
                                 return;
-                            }
-                            
-                            return response.json();
-                        })
-                        .then(json=>{
+                            }                    
                             setError("Account created successfully...");
                             // console.log(json)
                         });
@@ -95,14 +91,14 @@ export default function PersonalInfo(){
                 }
                 else{
                     const userIndex = usersData.findIndex(user=>user.passportNumber === userDetails.passportNumber && userDetails.country === user.country && user.password === userDetails.password);
-                    const userData = usersData.find(user=>user.passportNumber === userDetails.passportNumber && userDetails.country === user.country && user.password === userDetails.password);
+                    // const userData = usersData.find(user=>user.passportNumber === userDetails.passportNumber && userDetails.country === user.country && user.password === userDetails.password);
 
                     if(userIndex === -1){
                         setError("Provide a valid data.User details not found");
                         return;
                     }
-                    dispatch(bookingActions.addUserDetails(userData));
-                    localStorage.setItem("userid",userData.id);
+                    dispatch(bookingActions.addUserDetails(usersData[userIndex]));
+                    localStorage.setItem("userid",usersData[userIndex].id);
                     navigate("/home");
                 }
                 setError("");

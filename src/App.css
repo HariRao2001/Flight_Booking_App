@@ -30,6 +30,10 @@
   border-radius: 10px;
 }
 
+.home_page button:hover{
+  transform: scale(1.1);
+}
+
 .personal_profile_block{
   display: flex;
   align-items: center;
@@ -63,6 +67,10 @@
   border-color: #E9EBEA;
 }
 
+.person_info_block fieldset:focus-within legend, .booking_places_block fieldset:focus-within legend{
+  color:orangered;
+}
+
 .booking_places_block fieldset{
   margin-top:20px;
 }
@@ -86,7 +94,7 @@ legend{
   border:none
 }
 
-.user_input_block input:focus {
+.user_input_block input:focus, .user_input_block select:focus{
   outline:none;
 }
 
@@ -147,6 +155,10 @@ legend{
   align-items: center;
   justify-content: center;
   margin:auto;
+}
+
+.booking_buttons > button{
+  cursor: pointer;
 }
 
 .booking_places_block{
@@ -221,7 +233,7 @@ legend{
 
 }
 hr{
-  width: 400px;
+  width: 380px;
 }
 
 .flight_places_indetail p{
@@ -232,6 +244,7 @@ hr{
   display: flex;
   align-items: center;
   justify-content: space-around;
+  gap: 20px;
 }
 
 .flight_details_places_block p,.payment_details_places_block p{
@@ -284,7 +297,9 @@ hr{
   margin-left: 10px;
 
 }
-
+.confirm_btn:hover, .cancel_btn:hover {
+  transform: scale(1.1);
+}
 .cancel_btn{
   width: 140px;
   height: 50px;
@@ -378,6 +393,7 @@ hr{
 
 .payment_form_block input:focus{
   outline:none;
+  border-bottom: 2px solid orangered;
 }
 
 .payment_card_icons{
@@ -390,7 +406,7 @@ hr{
 }
 
 .payment_submit_btn,.download_button{
-    width:400px;
+    width:360px;
     height:59px;
     border-radius: 5px;
     background: #EC441E;
@@ -402,7 +418,7 @@ hr{
     font-size: 16px;
 }
 .payment_cancel_btn{
-  width:400px;
+  width:360px;
   height:59px;
   border-radius: 5px;
   color:#EC441E;
@@ -413,11 +429,17 @@ hr{
 }
 
 .boarding_pass_subheader{
-  width:400px;
+  width:380px;
   display:flex;
   flex-direction:column;
   align-items: center;
   margin:20px auto;
+}
+
+.boarding_pass_subheader:hover{
+      transform: scale(1.05);
+      border: 2px solid orangered;
+      padding: 2px;
 }
 
 .boarding_flight_details_timings_block{
@@ -438,7 +460,7 @@ hr{
 }
 
 .payment_details_places_block p{
-  color:#DDDDDD;
+  color: #808181;
   margin:0px;
 }
 
@@ -492,6 +514,7 @@ hr{
 .user_name_block h3{
   font-size: 24px;
   margin-top:0px;
+  color: orangered;
 }
 
 .side_panel_links div{
@@ -499,6 +522,11 @@ hr{
   align-items: center;    
   margin-left: 50px;
   margin-top:10px;
+}
+
+.side_panel_links div:hover>a, .signout_btn:hover{
+  transform: scale(1.1);
+  color:orangered;
 }
 
 .side_panel_links div>a{
@@ -512,6 +540,7 @@ hr{
 .side_panel_bar hr, .search_block hr{
   width:330px;
 }
+
 
 .individual_flight_details{
   display: flex;
@@ -570,15 +599,9 @@ hr{
   border-radius: 5px;
 }
 
-/* .seat_booking_block{
-  // width:400px;
-  display:flex;
-  flex-direction:column;
-  align-items: center;
-  //margin:40px auto; 
-} 
-
-*/
+.results_block:hover, .seats_column > button:hover{
+  transform:scale(1.1);
+}
 
 .seat_booking_subheader_part{
   display: flex;
@@ -617,15 +640,29 @@ hr{
   flex-direction: column;
 }
 
-.seats_column > button{
+.seats_column button{
   width : 35px;
   height : 35px;
-  margin: 20px;
+  margin: 0px 20px;
   border : none;
   border-radius : 5px;
   color : #575757;
   font-size : 14px;
   cursor : pointer;
+}
+
+.seats_column span{
+  display: none;
+}
+
+.seats_column button:hover+span{
+  display:block;
+}
+
+.seats_column p{
+  display:flex;
+  flex-direction: column;
+  align-items:center
 }
 
 .selected_seat{
@@ -735,4 +772,90 @@ hr{
 .page_not_found_block > h1{
   margin: 0px;
   font-size: xxx-large;
+}
+
+.passengers_info_block{
+  width: 340px;
+  margin: auto;
+}
+
+.passengers_details_block input{
+  width: 300px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+
+.passengers_details_block h4{
+  color: orangered;
+}
+
+.passengers_info_block form{
+  box-shadow: 1px 3px 9px 1px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+}
+
+.passengers_info_block > form > button{
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: orangered;
+  color: white;
+}
+
+
+.fa-star:before {
+  font-size: xx-large;
+  margin:0px 10px;
+}
+
+.rating_block{
+  width:360px;
+  height: 50vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rating_submit_btn, .support_search_btn{
+  width: 100px;
+  padding: 10px;
+  border: none;
+  background: orangered;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: medium;
+}
+
+.support_block{
+  width: 400px;
+  margin:auto;
+}
+
+.support_block input{
+  width :400px;
+  padding:5px;
+  margin-bottom: 20px;
+}
+
+.support_block input:focus{
+  border: 2px solid orangered;
+}
+
+.support_block>a{
+  color:orangered;
+  cursor: pointer;
+  text-decoration:none;
+}
+
+.fa:hover{
+  color:orangered;
+}
+
+fieldset:focus-within{
+    border: 2px solid orangered;
 }

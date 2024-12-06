@@ -46,13 +46,14 @@ export default function SeatBooking(){
                 //we are caling the seatNumbers function to create the default seat numbers.
                 duplicateSeatNumbers.map(innerArr=>{
                     innerArr.map(seat=>{
-                        const indexVal = selectedSeatsArr.indexOf(seat.seatNo);
+                        const indexVal = selectedSeatsArr.findIndex(passenger=>passenger.seatNo === seat.seatNo);
                         //we are searching which seat is reserved or not.
-                        //if index value not equal to -1 that seat is reserved previous
-                        //if index value is equal to -1 that seat is not reserved 
+                        //if index value not equal to -1 that seat is reserved previously.
+                        //if index value is equal to -1 that seat is not reserved previously.
                         if(indexVal !== -1){
                             //here we are setting the seat is to be reserved
                             seat.reserved = true;
+                            seat.passengerName = selectedSeatsArr[indexVal].personName;
                         }
                     })
                 });
@@ -135,7 +136,8 @@ export default function SeatBooking(){
                     return <div key={rowIndex} className="seats_column">
                         {
                             row.map((seat, columnIndex)=>{
-                               return <button 
+                               return <p key={seat.seatNo}>
+                                    <button 
                                         disabled={seat.reserved}
                                         key={seat.seatNo} 
                                         className={seat.selected ? `selected_seat` : seat.reserved ? "reserved_seat" : undefined} 
@@ -143,6 +145,8 @@ export default function SeatBooking(){
                                     >
                                     {seat.seatNo}
                                     </button>
+                                    <span>{seat.passengerName}</span>
+                                    </p>
                         })
                         }
                     </div>

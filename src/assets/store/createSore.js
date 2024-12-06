@@ -6,6 +6,7 @@ const counterSlice = createSlice({
     name:"bookingApp",
     initialState : {
         userDetails : {},
+        passengerDetails:{},
         passengerFlightBookingDetails:{},
         selectedFlightDetails : {},
         boardingDetailsArr : [],
@@ -35,12 +36,17 @@ const counterSlice = createSlice({
         confirmSelectedSeats(state, action){
             state.selectedSeats = action.payload;
         },
+        passengersDetailsHandler(state, action){
+            state.passengerDetails = action.payload;
+        },
 
-        resetPassengersDetails(state, action){
+        resetPassengersDetails(state){
             state.passengerFlightBookingDetails = {};
             state.selectedFlightDetails = {};
             state.selectedSeats = [];
         }
+
+       
     }
 })
 

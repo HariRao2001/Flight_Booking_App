@@ -7,6 +7,26 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 export default function IndividualBoardingPass() {
   const location = useLocation();
   const airplane = location.state;
+
+  // function createTableBody(obj){
+  //   const rows = [];
+  //     const passengerCount = Object.keys(obj).length / 2; 
+  //     for (let i = 1; i <= passengerCount; i++) {
+  //       const nameKey = `passenger${i}name`;
+  //       const ageKey = `passenger${i}age`;
+ 
+  //       if(obj[nameKey] && obj[ageKey]) {
+  //         rows.push(
+  //           <tr key={i}>
+  //             <td>{obj[nameKey]}</td>
+  //             <td>{obj[ageKey]}</td>
+  //           </tr>
+  //         );
+  //       }
+  //   }
+  //   return rows;
+  // }
+
   return (
     airplane ? (
     <div className="boarding_pass_block">
@@ -79,8 +99,25 @@ export default function IndividualBoardingPass() {
         </table>
         <hr />
         <table className="passenger_details_block">
-          <thead></thead>
+          <thead>
+            <tr>
+              <th>Passenger Name</th>
+              <th>Passenger Age</th>
+            </tr>
+          </thead>
+          
+          {/* {createTableBody(airplane.passengerDetails)} */}
+          <tbody>
+            {airplane.passengerSeatConfigurationDetails.map(passenger=><tr key={passenger.seatNo}>
+              <td>{passenger.personName}</td>
+              <td>{passenger.personAge}</td>
+            </tr>)}
+          </tbody>
         </table>
+        <hr />
+        <div>
+          <b>Total Cost: </b><span>{airplane.price}</span>
+        </div>
         <button className="download_button">Download</button>
         <Link to="/home">Book another flight</Link>
       </div>

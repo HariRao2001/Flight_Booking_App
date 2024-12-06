@@ -219,55 +219,55 @@ export const airplaneClasses = ["Economy", "Business"];
 export const  seatNumbers = ()=>{
     return [
     [ 
-        { seatNo:"1A", reserved: false, selected: false },
-        { seatNo:"2A", reserved: false, selected: false },
-        { seatNo:"3A", reserved: false, selected: false },
-        { seatNo:"4A", reserved: false, selected: false },
-        { seatNo:"5A", reserved: false, selected: false },
-        { seatNo:"6A", reserved: false, selected: false },
-        { seatNo:"7A", reserved: false, selected: false },
-        { seatNo:"8A", reserved: false, selected: false },
-        { seatNo:"9A", reserved: false, selected: false },
-        { seatNo:"10A", reserved: false, selected: false }
+        { seatNo:"1A", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"2A", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"3A", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"4A", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"5A", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"6A", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"7A", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"8A", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"9A", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"10A", reserved: false, selected: false, passengerName:"" }
         
     ],
     [ 
-        { seatNo:"1B", reserved: false, selected: false },
-        { seatNo:"2B", reserved: false, selected: false },
-        { seatNo:"3B", reserved: false, selected: false },
-        { seatNo:"4B", reserved: false, selected: false },
-        { seatNo:"5B", reserved: false, selected: false },
-        { seatNo:"6B", reserved: false, selected: false },
-        { seatNo:"7B", reserved: false, selected: false },
-        { seatNo:"8B", reserved: false, selected: false },
-        { seatNo:"9B", reserved: false, selected: false },
-        { seatNo:"10B", reserved: false, selected: false }
+        { seatNo:"1B", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"2B", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"3B", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"4B", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"5B", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"6B", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"7B", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"8B", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"9B", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"10B", reserved: false, selected: false, passengerName:"" }
 
     ],
     [ 
-        { seatNo:"1C", reserved: false, selected: false },
-        { seatNo:"2C", reserved: false, selected: false },
-        { seatNo:"3C", reserved: false, selected: false },
-        { seatNo:"4C", reserved: false, selected: false },
-        { seatNo:"5C", reserved: false, selected: false },
-        { seatNo:"6C", reserved: false, selected: false },
-        { seatNo:"7C", reserved: false, selected: false },
-        { seatNo:"8C", reserved: false, selected: false },
-        { seatNo:"9C", reserved: false, selected: false },
-        { seatNo:"10C", reserved: false, selected: false }
+        { seatNo:"1C", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"2C", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"3C", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"4C", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"5C", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"6C", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"7C", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"8C", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"9C", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"10C", reserved: false, selected: false, passengerName:"" }
         
     ],
     [ 
-        { seatNo:"1D", reserved: false, selected: false },
-        { seatNo:"2D", reserved: false, selected: false },
-        { seatNo:"3D", reserved: false, selected: false },
-        { seatNo:"4D", reserved: false, selected: false },
-        { seatNo:"5D", reserved: false, selected: false },
-        { seatNo:"6D", reserved: false, selected: false },
-        { seatNo:"7D", reserved: false, selected: false },
-        { seatNo:"8D", reserved: false, selected: false },
-        { seatNo:"9D", reserved: false, selected: false },
-        { seatNo:"10D", reserved: false, selected: false }
+        { seatNo:"1D", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"2D", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"3D", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"4D", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"5D", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"6D", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"7D", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"8D", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"9D", reserved: false, selected: false, passengerName:"" },
+        { seatNo:"10D", reserved: false, selected: false, passengerName:"" }
         
     ]
 

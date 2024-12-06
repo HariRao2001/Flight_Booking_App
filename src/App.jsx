@@ -13,6 +13,7 @@ const SearchResult = lazy(()=>import('./assets/components/SearchResult/SearchRes
 const MyBookings =  lazy(()=>import('./assets/components/MyBookings/MyBookings'));
 const IndividualBoardingPass = lazy(()=>import('./assets/components/IndividualBoardingPass/IndividualBoardingPass'));
 const SeatBooking = lazy(()=>import('./assets/components/SeatBookings/SeatBookings'));
+const Rating = lazy(()=>import("./assets/components/Rating/Rating"));
 
 
 import { Provider } from "react-redux";
@@ -20,6 +21,8 @@ import store from './assets/store/createSore';
 import Loading from './assets/components/Loading/Loading';
 import ErrorPage from './assets/components/ErrorPage/ErrorPage';
 import PageNotFound from './assets/components/PageNotFound/PageNotFound';
+import PassengerDetails from './assets/components/PassengerDetails/PassengerDetails';
+import Support from './assets/components/Support/Support';
 
 
 function App() {
@@ -30,11 +33,14 @@ function App() {
     { path:"/flightbooking", element:<Suspense fallback={<Loading />}><FlightBooking /></Suspense> },
     { path:"/searchresult", element:<Suspense fallback={<Loading />}><SearchResult /></Suspense> },
     { path:"/flightdetails", element:<Suspense fallback={<Loading />}><FlightDetails /></Suspense> },
+    { path:"/passengerdetails", element:<PassengerDetails />},
     { path:"/seatbooking", element : <Suspense fallback={<Loading />}><SeatBooking /></Suspense>},
     { path:"/paymentpage", element: <Suspense fallback={<Loading />}><PaymentPage /></Suspense> },
     { path:"/ibp", element : <Suspense fallback={<Loading />}><IndividualBoardingPass /></Suspense> },
     { path:"/mybookings", element: <Suspense fallback={<Loading />}><MyBookings /></Suspense> },
     { path:"/boardingpass", element: <Suspense fallback={<Loading />}><BoardingPass /></Suspense> },
+    { path:"/rating", element:<Suspense fallback={<Loading />}><Rating /></Suspense>},
+    { path:"/support", element:<Suspense fallback={<Loading />}><Support /></Suspense>},
     { path:"/error", element:<ErrorPage />},
     { path:"/:notfound",element:<PageNotFound />}
   ])

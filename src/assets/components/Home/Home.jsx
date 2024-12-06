@@ -1,11 +1,7 @@
 import flightImage from "../../images/Logo.png";
 import { useNavigate } from "react-router-dom";
 
-
 export default function Home(){
-
-
-
     const navigate = useNavigate();
     
     function startButtonHandler(){

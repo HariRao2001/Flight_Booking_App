@@ -6,16 +6,7 @@ import { useLocation, useNavigate, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { bookingActions } from "../../store/createSore";
 
-import { useEffect } from "react";
-
-
 export default function FlightDetails(){
-    // useEffect(()=>{
-    //     fetch("http://localhost:3000/flightNames/")
-    //     .then(response=>response.json())
-    //     .then(json=>console.log(json));
-    // })
-
     
     const location = useLocation();
     const navigate = useNavigate();
@@ -28,7 +19,7 @@ export default function FlightDetails(){
     
     function confirmHandler(){
         dispatch(bookingActions.addSelectedFlightDetails(flightData));
-        navigate("/seatbooking");
+        navigate("/passengerdetails");
     }
 
     return(flightData ? (<div>
