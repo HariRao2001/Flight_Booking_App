@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import PageNotFound from "../PageNotFound/PageNotFound";
 
@@ -71,6 +71,7 @@ export default function Rating(){
         </div>
         <br />
         <button className="rating_submit_btn" onClick={ratingSubmitHandler}>Submit</button>
+        <Link to="/home">Back to homepage</Link>
         { successMessage && <p>{successMessage}</p>}
     </div>
 }

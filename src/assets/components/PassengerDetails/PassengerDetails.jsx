@@ -36,7 +36,7 @@ export default function PassengerDetails(){
                 return <div key={index} className="passengers_details_block">
                     <h4>Passenger{index+1} details</h4>
                     <input type="text" name={`passenger${index+1}name`} placeholder="Enter Passenger Name" required></input>
-                    <input type="number" name={`passenger${index+1}age`} placeholder="Enter Passenger Age" required></input>
+                    <input type="number" name={`passenger${index+1}age`} min="0" placeholder="Enter Passenger Age" required></input>
                 </div>
             })
         }
