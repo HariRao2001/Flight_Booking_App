@@ -17,6 +17,7 @@ import { useSearchParams } from "react-router-dom";
 export default function PersonalInfo(){
     const [searchParams] = useSearchParams();
     const [error, setError] =useState("");
+    const [successMessage, setSuccessMessage] = useState("");
 
     useEffect(()=>{
         setError("");
@@ -82,7 +83,6 @@ export default function PersonalInfo(){
                                 return;
                             }                    
                             setError("Account created successfully...");
-                            // console.log(json)
                         });
                     }
                     else{
@@ -99,7 +99,11 @@ export default function PersonalInfo(){
                     }
                     dispatch(bookingActions.addUserDetails(usersData[userIndex]));
                     localStorage.setItem("userid",usersData[userIndex].id);
-                    navigate("/home");
+                    setSuccessMessage("Login Successfully...");
+                    setTimeout(()=>{
+                        setSuccessMessage("");
+                        navigate("/home");
+                    }, 2000);
                 }
                 setError("");
             }
@@ -181,6 +185,7 @@ export default function PersonalInfo(){
                 </div>
             </fieldset>
             {error &&<p>{error}</p>}
+            {successMessage && <div className="success_message_block"><p>{successMessage}</p></div>}
             <button className="confirm_btn">{searchParams.get("mode") === "signup" ? "Signup" : "Login"}</button>
             <Link to={`?mode=${searchParams.get("mode") === "signup" ? "login" : "signup"}`}>{searchParams.get("mode") === "signup" ? "Login" : "Create a new account" }</Link>
         </form>

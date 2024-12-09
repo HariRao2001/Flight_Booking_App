@@ -158,16 +158,57 @@
           "personAge": "23"
         }
       ]
+    },
+    {
+      "id": "30ae",
+      "airplaneId": "IND173",
+      "airplaneTravellingDetails": {
+        "from": "(CHN)Chennai",
+        "to": "(MBI)Mumbai"
+      },
+      "airplaneClass": "Economy",
+      "price": "8700",
+      "duration": "03hr 40min",
+      "airportNames": {
+        "from": "Chennai International Airport, Chennai",
+        "to": "Chattrapathi Shivaji Interantional Airport, Mumbai"
+      },
+      "airplaneTimings": {
+        "start": "13:20",
+        "end": "17:00"
+      },
+      "passengersCount": "2",
+      "orderedDate": "2024-12-09T08:26:40.574Z",
+      "flightDate": "2024-12-10",
+      "ticketId": "3614720521996422",
+      "selectedSeats": [
+        "9D",
+        "10D"
+      ],
+      "userId": "66d5",
+      "passengerDetails": {
+        "passenger1name": "hari",
+        "passenger1age": "23",
+        "passenger2name": "Manikanta",
+        "passenger2age": "22"
+      },
+      "passengerSeatConfigurationDetails": [
+        {
+          "seatNo": "9D",
+          "personName": "hari",
+          "personAge": "23"
+        },
+        {
+          "seatNo": "10D",
+          "personName": "Manikanta",
+          "personAge": "22"
+        }
+      ]
     }
   ],
   "rating": [
     {
       "id": "5aec",
-      "userid": "66d5",
-      "ratingValue": 4
-    },
-    {
-      "id": "63c2",
       "userid": "66d5",
       "ratingValue": 4
     }
@@ -224,6 +265,18 @@
         "seatNo": "1C",
         "personName": "Hari",
         "personAge": "23"
+      }
+    ],
+    "2024-12-10": [
+      {
+        "seatNo": "9D",
+        "personName": "hari",
+        "personAge": "23"
+      },
+      {
+        "seatNo": "10D",
+        "personName": "Manikanta",
+        "personAge": "22"
       }
     ]
   },

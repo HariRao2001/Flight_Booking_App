@@ -865,3 +865,20 @@ hr{
 fieldset:focus-within{
     border: 2px solid orangered;
 }
+
+
+.success_message_block{
+  color: orangered;
+  animation: success_highlight 2s 0s ease;
+}
+
+@keyframes success_highlight{
+  from{
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to{
+    transfrom: translateX(0px);
+    opacity: 1;
+  }
+}

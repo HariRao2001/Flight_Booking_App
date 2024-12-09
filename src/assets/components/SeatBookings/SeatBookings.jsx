@@ -13,6 +13,7 @@ export default function SeatBooking(){
     const [ selectedSeats, setSelectedSeats ] = useState([]);
     const [totalBookingSeats, setTotalBookingSeats] = useState(0);
 
+
     const [ error,setError ] = useState("");
 
     const selectedFlightDetails = useSelector(state=>state.selectedFlightDetails);
@@ -74,7 +75,7 @@ export default function SeatBooking(){
                     body:JSON.stringify(json)
                 })
                 .then(response=>response.json())
-                .then(json=>console.log(json));
+                // .then(json=>console.log(json));
                 //here we are assign all the seats are not reserved because we recently created.see line no:62
                 setTotalBookingSeats(0);
                 setSelectedSeats((seatNumbers()));

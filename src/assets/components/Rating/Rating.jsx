@@ -7,7 +7,6 @@ import PageNotFound from "../PageNotFound/PageNotFound";
 export default function Rating(){
     const [selectedStars, setSelectedStars] = useState([false, false, false, false, false]);
     const [successMessage, setSuccessMessage] = useState("");
-
     const navigate = useNavigate();
 
     function starClickHandler(indexVal){
@@ -36,6 +35,10 @@ export default function Rating(){
     function ratingSubmitHandler(){
         const userid = localStorage.getItem("userid");
         const ratingValue  = selectedStars.filter(val=>val==true).length;
+        
+        if(!userid){
+            return <PageNotFound />
+        }
 
         fetch("http://localhost:3000/rating",{
             method:"POST",
@@ -70,8 +73,10 @@ export default function Rating(){
             }
         </div>
         <br />
+        {successMessage && <div className="success_message_block"><p>{successMessage}</p></div>}
         <button className="rating_submit_btn" onClick={ratingSubmitHandler}>Submit</button>
         <Link to="/home">Back to homepage</Link>
-        { successMessage && <p>{successMessage}</p>}
+        
+
     </div>
 }

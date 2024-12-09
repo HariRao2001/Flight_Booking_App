@@ -9,11 +9,12 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 
 export default function SidePanel(){
     const navigate = useNavigate();
+    const [successMessage, setSuccessMessage] = useState("");
 
     useEffect(()=>{
         if(!localStorage.getItem("userid")){
@@ -25,8 +26,11 @@ export default function SidePanel(){
 
     function signoutHandler(){
         localStorage.removeItem("userid");
-        alert("Signout successfully");
-        navigate("/");
+        setSuccessMessage("Signout Successfully...");
+        setTimeout(()=>{
+            navigate("/");
+            setSuccessMessage("");
+        },2000);
     }
 
     return <div className="side_panel_bar">
@@ -61,6 +65,7 @@ export default function SidePanel(){
                 <img src={signoutIcon} alt="image_not_found" className="signout_icon"/>
                 <button className="signout_btn" onClick={signoutHandler}>Signout</button>
             </div>
+            {successMessage && <div className="success_message_block"><p>{successMessage}</p></div>}
         </div>
     </div>
 }

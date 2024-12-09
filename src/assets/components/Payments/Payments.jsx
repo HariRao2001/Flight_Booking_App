@@ -20,6 +20,8 @@ import { useEffect } from "react";
 
 export default function PaymentPage(){
     const [error, setError]= useState("");
+    const [successMessage, setSuccessMessage] = useState("");
+    
     const navigate = useNavigate();
 
     const dispatch = useDispatch();
@@ -134,14 +136,16 @@ export default function PaymentPage(){
                         throw new Error("Something went wrong");
                     }
                     return response.json();
-                })
-                .then(json=>console.log(json));
-            }
+                })            }
             run();
-            window.alert("Booking successfully");
-            dispatch(bookingActions.boardingHandler(newObj));
-            dispatch(bookingActions.resetPassengersDetails());
-            navigate("/ibp",{ state : newObj });
+    
+            setSuccessMessage(`Your flight ticket${selectedSeats.length !== 1 ? "s" : ""} booked successfully...`);
+           
+            setTimeout(()=>{
+                dispatch(bookingActions.boardingHandler(newObj));
+                dispatch(bookingActions.resetPassengersDetails());
+                navigate("/ibp",{ state : newObj });
+            },2000);
         });        
         
     }
@@ -252,6 +256,7 @@ export default function PaymentPage(){
                 <img src={visaIcon} alt="image_not_found"></img>
                 <img src={payalIcon} alt="image_not_found"></img>
             </div>
+            {successMessage && <div className="success_message_block"><p>{successMessage}</p></div>}
             <button className="payment_submit_btn" onSubmit={submitHandler}>Submit</button>
             <button className="payment_cancel_btn" type="reset" >Cancel</button>
         </form>
