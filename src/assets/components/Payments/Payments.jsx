@@ -15,9 +15,6 @@ import { bookingActions } from "../../store/createSore";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import FlightBooking from "../FlightBooking/FlightBooking";
 
-import { useEffect } from "react"; 
-
-
 export default function PaymentPage(){
     const [error, setError]= useState("");
     const [successMessage, setSuccessMessage] = useState("");
@@ -31,11 +28,6 @@ export default function PaymentPage(){
     const selectedSeats = useSelector(state=>state.selectedSeats);
     const userDetails = useSelector(state=>state.userDetails);
     const passengerDetails =  useSelector(state=>state.passengerDetails);
-
-    useEffect(()=>{
-        
-    })
-
 
     function getCurrentDate(){
         const date = new Date();

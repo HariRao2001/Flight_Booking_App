@@ -1,107 +1,44 @@
 {
   "usersDetails": [
     {
-      "id": "66d5",
+      "id": "31ca",
       "name": "manikanta nelli",
       "password": "Manikanta@2001",
       "address": "kota,ap,524411",
       "passportNumber": "dgwhdhuiqw",
-      "dob": "2023-01-04",
-      "country": "India"
-    },
-    {
-      "id": "bd98",
-      "name": "hari",
-      "password": "Hari@200111",
-      "address": "Kota",
-      "passportNumber": "jhjh134567",
-      "dob": "2023-01-11",
+      "dob": "2002-01-11",
       "country": "India"
     }
   ],
   "bookingsData": [
     {
-      "id": "269f",
-      "airplaneId": "IND112",
+      "id": "f200",
+      "airplaneId": "IND173",
       "airplaneTravellingDetails": {
-        "from": "HYD(Hyderabad)",
+        "from": "(CHN)Chennai",
         "to": "(MBI)Mumbai"
       },
       "airplaneClass": "Economy",
-      "price": "9000",
-      "duration": "02hr 40min",
+      "price": "8700",
+      "duration": "03hr 40min",
       "airportNames": {
-        "from": "Rajiv Gandhi International Airport, Hyderabad",
+        "from": "Chennai International Airport, Chennai",
         "to": "Chattrapathi Shivaji Interantional Airport, Mumbai"
       },
       "airplaneTimings": {
-        "start": "09:20",
-        "end": "12:00"
-      },
-      "passengersCount": "3",
-      "orderedDate": "2024-12-06T08:07:26.928Z",
-      "flightDate": "2024-12-07",
-      "ticketId": "4208021421037944",
-      "selectedSeats": [
-        "2B",
-        "2C",
-        "2D"
-      ],
-      "userId": "66d5",
-      "userName": "manikanta nelli",
-      "passengerDetails": {
-        "passenger1name": "hari",
-        "passenger1age": "23",
-        "passenger2name": "Mani",
-        "passenger2age": "22",
-        "passenger3name": "Vikas",
-        "passenger3age": "22"
-      },
-      "passengerSeatConfigurationDetails": [
-        {
-          "seatNo": "2B",
-          "personName": "hari",
-          "personAge": "23"
-        },
-        {
-          "seatNo": "2C",
-          "personName": "Manikanta",
-          "personAge": "22"
-        },
-        {
-          "seatNo": "2D",
-          "personName": "Vikas",
-          "personAge": "22"
-        }
-      ]
-    },
-    {
-      "id": "5d22",
-      "airplaneId": "IND163",
-      "airplaneTravellingDetails": {
-        "from": "(CHN)Chennai",
-        "to": "(VZD)Vijayawada"
-      },
-      "airplaneClass": "Economy",
-      "price": "6000",
-      "duration": "02hr 10min",
-      "airportNames": {
-        "from": "Chennai International Airport, Chennai",
-        "to": "Vijayawada Airport, Vijayawada"
-      },
-      "airplaneTimings": {
-        "start": "14:00",
-        "end": "16:10"
+        "start": "13:20",
+        "end": "17:00"
       },
       "passengersCount": "2",
-      "orderedDate": "2024-12-06T09:41:40.661Z",
-      "flightDate": "2024-12-08",
-      "ticketId": "04194935880596806",
+      "orderedDate": "2024-12-10T07:08:12.604Z",
+      "flightDate": "2024-12-11",
+      "ticketId": "22739324399872451",
       "selectedSeats": [
-        "2C",
-        "2D"
+        "9C",
+        "9D"
       ],
-      "userId": "66d5",
+      "userId": "31ca",
+      "userName": "manikanta nelli",
       "passengerDetails": {
         "passenger1name": "hari",
         "passenger1age": "23",
@@ -110,19 +47,19 @@
       },
       "passengerSeatConfigurationDetails": [
         {
-          "seatNo": "2C",
+          "seatNo": "9C",
           "personName": "hari",
           "personAge": "23"
         },
         {
-          "seatNo": "2D",
+          "seatNo": "9D",
           "personName": "Manikanta",
           "personAge": "22"
         }
       ]
     },
     {
-      "id": "3eb6",
+      "id": "fc40",
       "airplaneId": "IND173",
       "airplaneTravellingDetails": {
         "from": "(CHN)Chennai",
@@ -140,143 +77,57 @@
         "end": "17:00"
       },
       "passengersCount": "1",
-      "orderedDate": "2024-12-08T14:09:31.491Z",
-      "flightDate": "2024-12-09",
-      "ticketId": "15743163672148586",
+      "orderedDate": "2024-12-10T07:13:57.066Z",
+      "flightDate": "2024-12-11",
+      "ticketId": "6950202165942061",
       "selectedSeats": [
-        "1C"
+        "8C"
       ],
-      "userId": "66d5",
+      "userId": "31ca",
+      "userName": "manikanta nelli",
       "passengerDetails": {
-        "passenger1name": "Hari",
+        "passenger1name": "Tharun",
         "passenger1age": "23"
       },
       "passengerSeatConfigurationDetails": [
         {
-          "seatNo": "1C",
-          "personName": "Hari",
+          "seatNo": "8C",
+          "personName": "Tharun",
           "personAge": "23"
-        }
-      ]
-    },
-    {
-      "id": "30ae",
-      "airplaneId": "IND173",
-      "airplaneTravellingDetails": {
-        "from": "(CHN)Chennai",
-        "to": "(MBI)Mumbai"
-      },
-      "airplaneClass": "Economy",
-      "price": "8700",
-      "duration": "03hr 40min",
-      "airportNames": {
-        "from": "Chennai International Airport, Chennai",
-        "to": "Chattrapathi Shivaji Interantional Airport, Mumbai"
-      },
-      "airplaneTimings": {
-        "start": "13:20",
-        "end": "17:00"
-      },
-      "passengersCount": "2",
-      "orderedDate": "2024-12-09T08:26:40.574Z",
-      "flightDate": "2024-12-10",
-      "ticketId": "3614720521996422",
-      "selectedSeats": [
-        "9D",
-        "10D"
-      ],
-      "userId": "66d5",
-      "passengerDetails": {
-        "passenger1name": "hari",
-        "passenger1age": "23",
-        "passenger2name": "Manikanta",
-        "passenger2age": "22"
-      },
-      "passengerSeatConfigurationDetails": [
-        {
-          "seatNo": "9D",
-          "personName": "hari",
-          "personAge": "23"
-        },
-        {
-          "seatNo": "10D",
-          "personName": "Manikanta",
-          "personAge": "22"
         }
       ]
     }
   ],
-  "rating": [
-    {
-      "id": "5aec",
-      "userid": "66d5",
-      "ratingValue": 4
-    }
-  ],
+  "rating": [],
   "support": [],
   "IND123": {},
   "IND122": {},
   "IND113": {},
-  "IND112": {
-    "2024-12-07": [
-      {
-        "seatNo": "2B",
-        "personName": "hari",
-        "personAge": "23"
-      },
-      {
-        "seatNo": "2C",
-        "personName": "Mani",
-        "personAge": "22"
-      },
-      {
-        "seatNo": "2D",
-        "personName": "Vikas",
-        "personAge": "22"
-      }
-    ]
-  },
+  "IND112": {},
   "IND103": {},
   "IND102": {},
   "IND143": {},
   "IND142": {},
   "IND153": {},
   "IND152": {},
-  "IND163": {
-    "2024-12-08": [
-      {
-        "seatNo": "2C",
-        "personName": "hari",
-        "personAge": "23"
-      },
-      {
-        "seatNo": "2D",
-        "personName": "Manikanta",
-        "personAge": "22"
-      }
-    ],
-    "2024-12-07": []
-  },
+  "IND163": {},
   "IND162": {},
   "IND173": {
-    "2024-12-07": [],
-    "2024-12-09": [
+    "2024-12-11": [
       {
-        "seatNo": "1C",
-        "personName": "Hari",
-        "personAge": "23"
-      }
-    ],
-    "2024-12-10": [
-      {
-        "seatNo": "9D",
+        "seatNo": "9C",
         "personName": "hari",
         "personAge": "23"
       },
       {
-        "seatNo": "10D",
+        "seatNo": "9D",
         "personName": "Manikanta",
         "personAge": "22"
+      },
+      {
+        "seatNo": "8C",
+        "personName": "Tharun",
+        "personAge": "23"
       }
     ]
   },

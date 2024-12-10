@@ -48,8 +48,8 @@ export default function PersonalInfo(){
             setError("Please provide a valid passport number");
             return;
         }
-        else if(!userDetails.dob || userDetails.dob.split("-")[0] >= new Date().getFullYear()){
-            setError("Please provide a valid date of birth");
+        else if(!userDetails.dob || new Date().getFullYear()-userDetails.dob.split("-")[0] < 18){
+            setError("Please provide a valid date of birth. Age must be greater than or equal to 18");
             return;
         }
         else if(!userDetails.country){
@@ -86,17 +86,18 @@ export default function PersonalInfo(){
                         });
                     }
                     else{
-                        return setError("Try with some other password");
+                        return setError("Try with different password");
                     }
                 }
                 else{
-                    const userIndex = usersData.findIndex(user=>user.passportNumber === userDetails.passportNumber && userDetails.country === user.country && user.password === userDetails.password);
+                    const userIndex = usersData.findIndex(user=>user.passportNumber === userDetails.passportNumber && userDetails.country === user.country && user.password === userDetails.password && userDetails.dob === user.dob);
                     // const userData = usersData.find(user=>user.passportNumber === userDetails.passportNumber && userDetails.country === user.country && user.password === userDetails.password);
-
+                
                     if(userIndex === -1){
                         setError("Provide a valid data.User details not found");
                         return;
                     }
+                    
                     dispatch(bookingActions.addUserDetails(usersData[userIndex]));
                     localStorage.setItem("userid",usersData[userIndex].id);
                     setSuccessMessage("Login Successfully...");
