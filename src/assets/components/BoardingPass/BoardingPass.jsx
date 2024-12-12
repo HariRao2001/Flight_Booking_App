@@ -4,6 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 
+import BarcodeImage from "../BarCodeImage/BarCodeImage";
+
+import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
+
 export default function BoardingPass() {
   const [filteredBoardingData, setFilteredBoardingData] = useState([]);
   const navigate = useNavigate();
@@ -11,7 +16,7 @@ export default function BoardingPass() {
   useEffect(()=>{
         if(!localStorage.getItem("userid")){
           navigate("/error");
-          console.log("error occured");
+          console.error("error occured");
           return;
         }
         const todayDate = new Date().toLocaleDateString().split("/");
@@ -34,7 +39,32 @@ export default function BoardingPass() {
           console.error(error);
       }
 
-    },[]);
+    },[navigate]);
+
+    function ticketDownloadHandler(id){
+      const data = document.getElementById(id);
+      // Use html2canvas to capture the element as a canvas
+      html2canvas(data).then((canvas) => {
+          // Create a PDF using jsPDF
+          const pdf = new jsPDF("portrait", "pt", "a4");
+  
+          // Convert the canvas to image and add it to the PDF
+          const imgData = canvas.toDataURL('image/png');
+          pdf.addImage(imgData, 'PNG', 0, 0, 595, 842);  // Set width and height for A4 size
+  
+          // Save the PDF with the name of the ticketId
+          pdf.save(`${id}.pdf`);
+      })
+  
+  
+      // The below code is useful when we do not show the barcode 
+  
+      // const pdf = new jsPDF("potrait", "pt", "a4");
+      // const data = document.getElementById(id);
+  
+      // pdf.html(data)
+      // .then(()=>pdf.save(`${id}.pdf`))
+    }
 
   return (
     <div className="boarding_pass_block">
@@ -50,7 +80,7 @@ export default function BoardingPass() {
         <>
           { filteredBoardingData.map((airplane, index) => {
             return (
-              <div className="boarding_pass_subheader" key={index}>
+              <div className="boarding_pass_subheader" key={index} id={airplane.ticketId}>
                 <div>
                   <h2>IA</h2>
                   <p>Indian Airlines</p>
@@ -132,7 +162,8 @@ export default function BoardingPass() {
                 <div>
                   <b>Total Cost: </b><span>{airplane.price * airplane.passengersCount}</span>
                 </div>
-                <button className="download_button">Download</button>
+                <BarcodeImage ticketId={airplane.ticketId} />
+                <button className="download_button" onClick={()=>ticketDownloadHandler(airplane.ticketId)}>Download</button>
                 <Link to="/flightbooking">Book another flight</Link>
                 <hr />
               </div>

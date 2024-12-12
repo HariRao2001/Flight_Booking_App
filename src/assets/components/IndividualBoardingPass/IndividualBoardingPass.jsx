@@ -3,6 +3,10 @@ import backIcon from "../../images/Back.png";
 import airportFromIcon from "../../images/From Icon.png";
 import ErrorPage from "../ErrorPage/ErrorPage";
 
+import BarcodeImage from "../BarCodeImage/BarCodeImage";
+
+import { jsPDF } from "jspdf";
+import html2canvas from "html2canvas";
 
 export default function IndividualBoardingPass() {
   const location = useLocation();
@@ -27,9 +31,36 @@ export default function IndividualBoardingPass() {
   //   return rows;
   // }
 
+  function ticketDownloadHandler(id){
+    const data = document.getElementById(id);
+    
+    // Use html2canvas to capture the element as a canvas
+    html2canvas(data).then((canvas) => {
+        // Create a PDF using jsPDF
+        const pdf = new jsPDF("portrait", "pt", "a4");
+
+        // Convert the canvas to image and add it to the PDF
+        const imgData = canvas.toDataURL('image/png');
+        pdf.addImage(imgData, 'PNG', 0, 0, 595, 842);  // Set width and height for A4 size
+
+        // Save the PDF with the name of the ticketId
+        pdf.save(`${id}.pdf`);
+    })
+
+
+    // The below code is useful when we do not show the barcode 
+
+    // const pdf = new jsPDF("potrait", "pt", "a4");
+    // const data = document.getElementById(id);
+
+    // pdf.html(data)
+    // .then(()=>pdf.save(`${id}.pdf`))
+  }
+
+
   return (
     airplane ? (
-    <div className="boarding_pass_block">
+    <div className="boarding_pass_block" id={`${airplane.ticketId}`}>
       <div className="boardingpass_header_block">
         <Link to="/home">
           <img src={backIcon} alt="image_not_found" />
@@ -118,7 +149,8 @@ export default function IndividualBoardingPass() {
         <div>
           <b>Total Cost: </b><span>{airplane.price}</span>
         </div>
-        <button className="download_button">Download</button>
+        <BarcodeImage ticketId={airplane.ticketId} />
+        <button className="download_button" onClick={()=>ticketDownloadHandler(airplane.ticketId)}>Download</button>
         <Link to="/home">Book another flight</Link>
       </div>
     </div>) : <ErrorPage />

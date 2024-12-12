@@ -141,7 +141,7 @@ export default function FlightBooking(){
                 <fieldset>
                     <legend>Traveller</legend>
                     <div className="user_input_block">
-                        <input type="number" min="1" placeholder="1 Adult" name="passengersCount" defaultValue={passengerFlightBookingDetails.passengersCount && passengerFlightBookingDetails.passengersCount}/>
+                        <input type="number" min="1" max="10" placeholder="1 Adult" name="passengersCount" defaultValue={passengerFlightBookingDetails.passengersCount && passengerFlightBookingDetails.passengersCount}/>
                     </div>
                 </fieldset>
                 <fieldset>

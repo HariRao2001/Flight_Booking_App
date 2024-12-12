@@ -96,6 +96,130 @@
           "personAge": "23"
         }
       ]
+    },
+    {
+      "id": "e52b",
+      "airplaneId": "IND173",
+      "airplaneTravellingDetails": {
+        "from": "(CHN)Chennai",
+        "to": "(MBI)Mumbai"
+      },
+      "airplaneClass": "Economy",
+      "price": "8700",
+      "duration": "03hr 40min",
+      "airportNames": {
+        "from": "Chennai International Airport, Chennai",
+        "to": "Chattrapathi Shivaji Interantional Airport, Mumbai"
+      },
+      "airplaneTimings": {
+        "start": "13:20",
+        "end": "17:00"
+      },
+      "passengersCount": "2",
+      "orderedDate": "2024-12-10T13:04:08.794Z",
+      "flightDate": "2024-12-11",
+      "ticketId": "9812964049416999",
+      "selectedSeats": [
+        "7D",
+        "8D"
+      ],
+      "userId": "31ca",
+      "userName": "manikanta nelli",
+      "passengerDetails": {
+        "passenger1name": "hari",
+        "passenger1age": "23",
+        "passenger2name": "Manikanta",
+        "passenger2age": "22"
+      },
+      "passengerSeatConfigurationDetails": [
+        {
+          "seatNo": "7D",
+          "personName": "hari",
+          "personAge": "23"
+        },
+        {
+          "seatNo": "8D",
+          "personName": "Manikanta",
+          "personAge": "22"
+        }
+      ]
+    },
+    {
+      "id": "e9e4",
+      "airplaneId": "IND163",
+      "airplaneTravellingDetails": {
+        "from": "(CHN)Chennai",
+        "to": "(VZD)Vijayawada"
+      },
+      "airplaneClass": "Economy",
+      "price": "6000",
+      "duration": "02hr 10min",
+      "airportNames": {
+        "from": "Chennai International Airport, Chennai",
+        "to": "Vijayawada Airport, Vijayawada"
+      },
+      "airplaneTimings": {
+        "start": "14:00",
+        "end": "16:10"
+      },
+      "passengersCount": "1",
+      "orderedDate": "2024-12-11T11:57:15.827Z",
+      "flightDate": "2024-12-12",
+      "ticketId": "8102839671238151",
+      "selectedSeats": [
+        "9C"
+      ],
+      "userId": "31ca",
+      "passengerDetails": {
+        "passenger1name": "hari",
+        "passenger1age": "23"
+      },
+      "passengerSeatConfigurationDetails": [
+        {
+          "seatNo": "9C",
+          "personName": "hari",
+          "personAge": "23"
+        }
+      ]
+    },
+    {
+      "id": "f552",
+      "airplaneId": "IND163",
+      "airplaneTravellingDetails": {
+        "from": "(CHN)Chennai",
+        "to": "(VZD)Vijayawada"
+      },
+      "airplaneClass": "Economy",
+      "price": "6000",
+      "duration": "02hr 10min",
+      "airportNames": {
+        "from": "Chennai International Airport, Chennai",
+        "to": "Vijayawada Airport, Vijayawada"
+      },
+      "airplaneTimings": {
+        "start": "14:00",
+        "end": "16:10"
+      },
+      "passengersCount": "1",
+      "orderedDate": "2024-12-12T08:53:23.329Z",
+      "flightDate": "2024-12-14",
+      "ticketId": "19434402312887888",
+      "selectedSeats": [
+        "10C"
+      ],
+      "userId": "31ca",
+      "userName": "manikanta nelli",
+      "passengerDetails": {
+        "passenger1name": "hari",
+        "passenger1age": "23"
+      },
+      "passengerSeatConfigurationDetails": [
+        {
+          "seatNo": "10C",
+          "personName": "hari",
+          "personAge": "23"
+        }
+      ]
     }
   ],
   "rating": [],
@@ -110,7 +234,22 @@
   "IND142": {},
   "IND153": {},
   "IND152": {},
-  "IND163": {},
+  "IND163": {
+    "2024-12-12": [
+      {
+        "seatNo": "9C",
+        "personName": "hari",
+        "personAge": "23"
+      }
+    ],
+    "2024-12-14": [
+      {
+        "seatNo": "10C",
+        "personName": "hari",
+        "personAge": "23"
+      }
+    ]
+  },
   "IND162": {},
   "IND173": {
     "2024-12-11": [
@@ -128,6 +267,16 @@
         "seatNo": "8C",
         "personName": "Tharun",
         "personAge": "23"
+      },
+      {
+        "seatNo": "7D",
+        "personName": "hari",
+        "personAge": "23"
+      },
+      {
+        "seatNo": "8D",
+        "personName": "Manikanta",
+        "personAge": "22"
       }
     ]
   },

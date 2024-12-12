@@ -663,17 +663,22 @@ hr{
 }
 
 .seats_column span{
-  display: none;
+  /* display: none; */
+  visibility: hidden;
 }
 
 .seats_column button:hover+span{
-  display:block;
+  /* display:block; */
+  visibility: visible;
 }
 
 .seats_column p{
   display:flex;
   flex-direction: column;
-  align-items:center
+  align-items:center;
+  width: 75px;
+  height: 54px;
+  margin-top: 0px;
 }
 
 .selected_seat{
@@ -684,6 +689,7 @@ hr{
 .reserved_seat{
   background-color: #D9D9D9;
   color: #575757;
+  cursor: not-allowed !important;
 }
 
 .seat_booking_confirm_btn{
@@ -895,4 +901,16 @@ fieldset:focus-within{
   to{
     transform: translateX(0px);
   }
+}
+
+text{
+  display: none;
+}
+
+rect{
+  height:50px;
+}
+
+svg{
+  width:370px;
 }
