@@ -91,7 +91,6 @@ export default function PersonalInfo(){
                 }
                 else{
                     const userIndex = usersData.findIndex(user=>user.passportNumber === userDetails.passportNumber && userDetails.country === user.country && user.password === userDetails.password && userDetails.dob === user.dob);
-                    // const userData = usersData.find(user=>user.passportNumber === userDetails.passportNumber && userDetails.country === user.country && user.password === userDetails.password);
                 
                     if(userIndex === -1){
                         setError("Provide a valid data.User details not found");
@@ -117,6 +116,7 @@ export default function PersonalInfo(){
     function backButtonHandler(){
         navigate("/");
     }
+
 
     return <div style={{backgroundColor:"white"}}>
         <div className="personal_profile_block">
@@ -188,7 +188,7 @@ export default function PersonalInfo(){
             {error &&<p>{error}</p>}
             {successMessage && <div className="success_message_block"><p>{successMessage}</p></div>}
             <button className="confirm_btn">{searchParams.get("mode") === "signup" ? "Signup" : "Login"}</button>
-            <Link to={`?mode=${searchParams.get("mode") === "signup" ? "login" : "signup"}`}>{searchParams.get("mode") === "signup" ? "Login" : "Create a new account" }</Link>
+            <Link to={`?mode=${searchParams.get("mode") === "signup" ? "login" : "signup"}`}>{searchParams.get("mode") === "signup" ? "Already have an account?" : "Create a new account" }</Link>
         </form>
       
     </div>

@@ -322,6 +322,7 @@ hr{
   border-radius: 5px;
 }
 
+
 .flight_details_block_btns{
   display: flex;
   align-items: center;
@@ -535,6 +536,11 @@ hr{
   margin-top:10px;
 }
 
+.admin_icon_block{
+  margin-left: 40px !important;
+  margin-top: 5px !important;
+}
+
 .side_panel_links div:hover>a, .signout_btn:hover{
   transform: scale(1.1);
   color:orangered;
@@ -599,7 +605,7 @@ hr{
   cursor: pointer;
 }
 
-.results_block{
+.results_block, .admin_login_block form{
   display: flex;
   flex-direction: column;    
   align-items: center;
@@ -609,6 +615,28 @@ hr{
   margin: 10px auto;
   border-radius: 5px;
 }
+
+.admin_login_block{
+  margin-top: 50px;
+}
+
+.admin_login_block h2,.admin_login_block p,a{
+  color: orangered;
+  text-align: center;
+  text-decoration: none;
+}
+
+.admin_login_block form{
+  display: flex;
+  flex-direction: column;
+}
+
+.admin_login_block form input{
+  width: 350px;
+  padding: 5px;
+  margin: 5px 0px;
+}
+
 
 .results_block:hover, .seats_column > button:hover{
   transform:scale(1.1);
@@ -853,6 +881,11 @@ hr{
   margin:auto;
 }
 
+.support_block > p{
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
 .support_block input{
   width :360px;
   padding:5px;
@@ -881,6 +914,149 @@ fieldset:focus-within{
 .success_message_block{
   color: orangered;
   animation: success_highlight 2s 0s ease;
+}
+
+.admin_block h2, table{
+  text-align: center;
+}
+
+.search_by_ticket_block > h2{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.search_by_ticket_block, .admin_support_block{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.search_by_ticket_link > a, .back_link > a, .admin_main_page a, .admin_block a{
+  text-decoration: none;
+  color: orangered;
+  cursor: pointer;
+  font-size:larger;
+}
+
+/* .back_button{
+  text-align: center;
+} */
+
+/* .back_button a:hover{
+  text-decoration: underline;
+} */
+
+.admin_main_page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin_main_page nav{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.admin_main_page h2{
+  text-align: center;
+}
+
+.admin_block select, .admin_support_block select{
+  border: 2px solid black;
+  border-radius: 2px;
+  padding: 5px;
+  margin: 0px 10px;
+}
+
+.admin_selection_area{
+  display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.result_table > p{
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.result_table table, .search_table_block table, .admin_support_block table{
+  margin: 20px auto;
+  padding: 10px;
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+/* .result_table table{
+  width: 400px;
+} */
+
+.result_table table th, 
+.result_table table td, 
+.search_table_block table th, 
+.search_table_block table td, 
+.admin_support_block table td, 
+.admin_support_block table th {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.names_column{
+  width: 150px;
+}
+
+.search_table_block{
+  overflow-x: scroll;
+  margin: 10px;
+}
+
+.input_search_block input{
+  width:200px;
+  padding:5px;
+}
+
+.input_search_block button, .reset_btn{
+  width: 100px;
+  padding: 9px;
+  cursor: pointer;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: orangered;
+  color: white;
+  font-size: medium;
+}
+
+.admin_login_btn{
+  width: 100px;
+  padding: 10px 5px;
+  border: none;
+  background-color: orangered;
+  color: white;
+  cursor: pointer;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.admin_main_page p>a:hover{
+  text-decoration: underline;
+}
+.admin_main_page button{
+  background-color: orangered;
+  border: none;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.admin_main_page button:hover{
+  background-color: white;
+  color: orangered;
+  border: 2px solid orangered;
 }
 
 @keyframes success_highlight{
@@ -913,4 +1089,39 @@ rect{
 
 svg{
   width:370px;
+}
+
+@media(min-width:700px){
+  .result_table table{
+    width: 650px;
+  }
+}
+
+@media (min-width:420px) and (max-width:800px){
+  .search_table_block{
+    width: 600px;
+  }
+}
+
+@media(max-width:420px){
+  .admin_block{
+    width: 420px;
+  }
+
+  .search_table_block{
+    width: 400px;
+  }
+
+  .admin_selection_area{
+    width: 420px;
+  }
+}
+
+@media(max-width: 500px){
+  .admin_main_page nav{
+    flex-direction: column;
+  }
+  .admin_main_page p{
+    margin: 0px;
+  }
 }

@@ -45,7 +45,7 @@ export default function Rating(){
             headers:{
                 "Content-Type" : "application/json"
             },
-            body: JSON.stringify({userid, ratingValue})
+            body: JSON.stringify({userid, ratingValue, submittedDate: new Date().toLocaleDateString()})
         })
         .then(response=>{
             if(!response.ok){

@@ -61,9 +61,8 @@ button:focus-visible {
 } */
 
 body {
-  margin:0px;
   width:100vw;
-  height:100vh;
+  /* padding: 10px; */
 
   /* place-items: center; */
   /* min-width: 320px; */

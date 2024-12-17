@@ -137,6 +137,7 @@ export default function PaymentPage(){
                 dispatch(bookingActions.boardingHandler(newObj));
                 dispatch(bookingActions.resetPassengersDetails());
                 navigate("/ibp",{ state : newObj });
+                
             },2000);
         });        
         

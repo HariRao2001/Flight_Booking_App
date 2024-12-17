@@ -41,6 +41,7 @@ const counterSlice = createSlice({
         },
 
         resetPassengersDetails(state){
+            state.passengerDetails = {};
             state.passengerFlightBookingDetails = {};
             state.selectedFlightDetails = {};
             state.selectedSeats = [];

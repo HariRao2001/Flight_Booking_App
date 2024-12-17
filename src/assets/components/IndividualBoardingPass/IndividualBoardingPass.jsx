@@ -11,7 +11,7 @@ import html2canvas from "html2canvas";
 export default function IndividualBoardingPass() {
   const location = useLocation();
   const airplane = location.state;
-
+  
   // function createTableBody(obj){
   //   const rows = [];
   //     const passengerCount = Object.keys(obj).length / 2; 

@@ -5,6 +5,8 @@ import RateusIcon from "../../images/Star.png";
 import airplaneTakeOff from "../../images/Airplane Take Off (1).png";
 import signoutIcon from "../../images/logout.webp";
 
+import adminIcon from "../../images/adminIcon.png";
+
 import { Link, useNavigate } from "react-router-dom";
 
 
@@ -64,6 +66,10 @@ export default function SidePanel(){
             <div>
                 <img src={signoutIcon} alt="image_not_found" className="signout_icon"/>
                 <button className="signout_btn" onClick={signoutHandler}>Signout</button>
+            </div>
+            <div className="admin_icon_block">
+                <img src={adminIcon} alt="image_not_found" />
+                <Link to="/admin">Admin Login</Link>
             </div>
             {successMessage && <div className="success_message_block"><p>{successMessage}</p></div>}
         </div>
