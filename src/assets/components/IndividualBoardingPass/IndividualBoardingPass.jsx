@@ -3,7 +3,7 @@ import backIcon from "../../images/Back.png";
 import airportFromIcon from "../../images/From Icon.png";
 import ErrorPage from "../ErrorPage/ErrorPage";
 
-import BarcodeImage from "../BarCodeImage/BarCodeImage";
+import BarcodeImage from "../BarcodeImage/BarCodeImage";
 
 import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
