@@ -16,7 +16,7 @@ export default function Support(){
         ticketData.userId = localStorage.getItem("userid");
         ticketData.submittedDate = new Date().toLocaleDateString();
 
-        fetch("http://localhost:3000/support",{
+        fetch("https://flights-data.onrender.com/support",{
             method:"POST",
             headers: {
                 "Content-Type": "application/json"
