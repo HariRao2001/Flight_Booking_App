@@ -40,7 +40,7 @@ export default function Rating(){
             return <PageNotFound />
         }
 
-        fetch("http://localhost:3000/rating",{
+        fetch("https://flights-data.onrender.com/rating",{
             method:"POST",
             headers:{
                 "Content-Type" : "application/json"
