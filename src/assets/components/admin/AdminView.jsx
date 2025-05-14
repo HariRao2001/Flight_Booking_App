@@ -18,7 +18,7 @@ export default function AdminView(){
             navigate("/adminlogin");
         }
 
-        fetch("http://localhost:3000/totalFlightNames")
+        fetch("https://flights-data.onrender.com/totalFlightNames")
         .then(response=>response.json())
         .then(json=>{
             setFlightNames(json);
@@ -33,7 +33,7 @@ export default function AdminView(){
 
 
     function flightNameChangeHandler(flightName){
-        fetch(`http://localhost:3000/${flightName}`)
+        fetch(`https://flights-data.onrender.com/${flightName}`)
         .then(response=>response.json())
         .then(json=>{
             overallData.current = json;
