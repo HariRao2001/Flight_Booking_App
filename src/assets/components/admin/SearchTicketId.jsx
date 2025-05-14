@@ -82,7 +82,7 @@ export default function SearchTicketId(){
 
 export function loader(){
     const promise =  new Promise((resolve, reject)=>{
-        fetch("http://localhost:3000/bookingsData")
+        fetch("https://flights-data.onrender.com/bookingsData")
         .then(response=>{
             if(!response.ok){
                 reject("Failed to load the data");
