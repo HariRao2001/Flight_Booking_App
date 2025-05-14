@@ -21,7 +21,7 @@ export default function BoardingPass() {
         }
         const todayDate = new Date().toLocaleDateString().split("/");
         try{
-          fetch("http://localhost:3000/bookingsData")
+          fetch("https://flights-data.onrender.com/bookingsData")
           .then((response)=>{
               if(!response.ok){
                   throw new Error("Something went wrong.Please try again");
