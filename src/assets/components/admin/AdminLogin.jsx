@@ -13,7 +13,7 @@ export default function AdminLogin(){
         const adminData = Object.fromEntries(formData.entries());
 
         async function run(){
-            const response = await fetch("http://localhost:3000/admin");
+            const response = await fetch("https://flights-data.onrender.com/admin");
             const json = await response.json();
             const findIndex = json.findIndex(admin=>admin.adminEmail === adminData.email && adminData.password === admin.adminPassword);
             
