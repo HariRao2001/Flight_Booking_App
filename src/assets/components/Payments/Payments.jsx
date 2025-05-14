@@ -109,14 +109,14 @@ export default function PaymentPage(){
             
             async function run(){
                 //with the below fetch we are retriving the flightdata based on the user selected flightid 
-                const response = await fetch(`http://localhost:3000/${flightData.airplaneId}`);
+                const response = await fetch(`https://flights-data.onrender.com/${flightData.airplaneId}`);
                 const updatedJson = await response.json();
 
                 //here concate the two arrays i.e, one array is the previousJson and the other array is the user selected seats then finally a new array is created.  
                 updatedJson[passengerData.date] = updatedJson[passengerData.date].concat(passengerSeatConfigurationDetails);
                 
                 //Here we are updating the data. i.e,,selected seats based on the flightid 
-                fetch(`http://localhost:3000/${flightData.airplaneId}`,{
+                fetch(`https://flights-data.onrender.com/${flightData.airplaneId}`,{
                     method:"PUT",
                     headers: {
                         "Content-Type" : "application/json"
