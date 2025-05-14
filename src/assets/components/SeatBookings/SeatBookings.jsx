@@ -35,7 +35,7 @@ export default function SeatBooking(){
 
         async function run(){
             //here we are getting the data based on the user selected flight id to display the seats which are reserved and not reserved
-            const response = await fetch(`http://localhost:3000/${selectedFlightDetails.airplaneId}`);
+            const response = await fetch(`https://flights-data.onrender.com/${selectedFlightDetails.airplaneId}`);
             const json = await response.json();
 
             //Here we are checking the key(i.e: user selected date) present in the getting response object;
@@ -67,7 +67,7 @@ export default function SeatBooking(){
                 json[passengerFlightBookingDetails.date] = [];
 
                 //here we are updating the data
-                fetch(`http://localhost:3000/${selectedFlightDetails.airplaneId}`,{
+                fetch(`https://flights-data.onrender.com/${selectedFlightDetails.airplaneId}`,{
                     method: "PUT",
                     headers: {
                         "Content-Type" : "application/json"
