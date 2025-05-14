@@ -73,7 +73,7 @@ export default function AdminSupport(){
 }
 
 export function loader(){
-    return fetch("http://localhost:3000/support")
+    return fetch("https://flights-data.onrender.com/support")
     .then(response=>response.json())
     
 }
