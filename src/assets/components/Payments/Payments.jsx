@@ -94,7 +94,7 @@ export default function PaymentPage(){
         newObj.passengerSeatConfigurationDetails = passengerSeatConfigurationDetails;
 
         //with the below fetch we just updating the newly booking details
-        fetch("http://localhost:3000/bookingsData",{
+        fetch("https://flights-data.onrender.com/bookingsData",{
             method: "POST",
             body: JSON.stringify(newObj), 
             headers: {
