@@ -58,7 +58,7 @@ export default function PersonalInfo(){
         }
         else{
             async function run(){
-                const response = await fetch("http://localhost:3000/usersDetails");
+                const response = await fetch("https://flights-data.onrender.com/usersDetails");
                     if(!response.ok){
                         setError("Something went wrong.please try again");
                         return;
@@ -70,7 +70,7 @@ export default function PersonalInfo(){
                     const userIndex = usersData.findIndex(user=>(user.passportNumber === userDetails.passportNumber) && (userDetails.country === user.country) && (user.password === userDetails.password));
 
                     if(userIndex === -1){
-                        fetch("http://localhost:3000/usersDetails",{
+                        fetch("https://flights-data.onrender.com/usersDetails",{
                             method: "POST",
                             body: JSON.stringify(userDetails),
                             headers : {
