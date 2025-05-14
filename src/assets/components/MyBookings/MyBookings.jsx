@@ -10,7 +10,7 @@ import { useEffect } from "react";
 import { bookingActions } from "../../store/createSore";
 
 import { useNavigate } from "react-router-dom";
-import BarcodeImage from "../BarCodeImage/BarCodeImage";
+import BarcodeImage from "../BarcodeImage/BarCodeImage";
 
 import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
