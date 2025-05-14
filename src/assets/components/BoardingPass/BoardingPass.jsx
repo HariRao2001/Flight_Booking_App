@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 
-import BarcodeImage from "../BarCodeImage/BarCodeImage";
+import BarcodeImage from "../BarcodeImage/BarCodeImage";
 
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
