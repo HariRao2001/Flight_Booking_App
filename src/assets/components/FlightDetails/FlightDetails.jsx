@@ -15,7 +15,6 @@ export default function FlightDetails(){
 
     const userData = useSelector(state=>state.passengerFlightBookingDetails);
     const dispatch = useDispatch();
-    console.log(userData);
     useEffect(()=>{
         if(Object.keys(userData).length === 0){
             navigate("/searchresult");
