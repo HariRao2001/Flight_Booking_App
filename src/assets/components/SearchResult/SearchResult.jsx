@@ -14,6 +14,10 @@ export default function SearchResult(){
     const navigate = useNavigate();
     
     useEffect(()=>{
+         if(Object.keys(flightDetails).length === 0){
+            navigate("/flightbooking");
+            return;
+        }
         const filteredLists = airplaneDetails.filter(airplane=>airplane.airplaneTravellingDetails.from.includes(flightDetails.airplaneFrom) && airplane.airplaneTravellingDetails.to.includes(flightDetails.airplaneTo) && flightDetails.className === airplane.airplaneClass);
         setFilteredFlightDetails(filteredLists);
     },[flightDetails.airplaneFrom, flightDetails.airplaneTo,flightDetails.className]);
