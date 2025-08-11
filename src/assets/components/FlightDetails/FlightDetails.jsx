@@ -1,7 +1,7 @@
 
 import backIcon from "../../images/Back.png";
 import airportFromIcon from "../../images/From Icon.png";
-
+import { useEffect } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { bookingActions } from "../../store/createSore";
@@ -10,16 +10,19 @@ export default function FlightDetails(){
     
     const location = useLocation();
     const navigate = useNavigate();
-
+    
     const flightData = location.state;
 
     const userData = useSelector(state=>state.passengerFlightBookingDetails);
     const dispatch = useDispatch();
     console.log(userData);
-    if(Object.keys(userData).length === 0){
-        navigate("/searchresult");
-        return;
-    }
+    useEffect(()=>{
+        if(Object.keys(userData).length === 0){
+            navigate("/searchresult");
+            return;
+        }
+    },[]);
+
     function confirmHandler(){
         dispatch(bookingActions.addSelectedFlightDetails(flightData));
         navigate("/passengerdetails");
