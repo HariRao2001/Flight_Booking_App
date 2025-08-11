@@ -31,7 +31,7 @@ export default function BoardingPass() {
           .then(json=>{
               const userId = localStorage.getItem("userid");
               const filteredArr = json.filter(data => (data.userId === userId) && (new Date(data.flightDate) >= new Date(`${todayDate[2]}-${todayDate[1]}-${todayDate[0]}`)) );
-              console.log(filteredArr);  
+              json.filter(data =>console.log((data.userId === userId) && (new Date(data.flightDate) >= new Date(`${todayDate[2]}-${todayDate[1]}-${todayDate[0]}`)) ));   
             setFilteredBoardingData(filteredArr);
             }
           );
