@@ -16,7 +16,9 @@ export default function FlightDetails(){
     const userData = useSelector(state=>state.passengerFlightBookingDetails);
     const dispatch = useDispatch();
 
-    
+    if(Object.keys(userData).length === 0){
+        navigate("/searchresult");
+    }
     function confirmHandler(){
         dispatch(bookingActions.addSelectedFlightDetails(flightData));
         navigate("/passengerdetails");
