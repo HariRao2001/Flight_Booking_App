@@ -19,7 +19,7 @@ export default function PassengerDetails(){
             return <PageNotFound />;
         };
         arr = Array.apply(null,Array(+selector.passengersCount));
-    },[]);
+    },[selector]);
     function submitHandler(e){
         e.preventDefault();
         const formData = new FormData(e.target);
