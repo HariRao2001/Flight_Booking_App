@@ -27,7 +27,7 @@ export default function PaymentPage(){
     const passengerData = useSelector(state=>state.passengerFlightBookingDetails);
     const flightData = useSelector(state=>state.selectedFlightDetails);
     const selectedSeats = useSelector(state=>state.selectedSeats);
-    const userDetails = useSelector(state=>state.userDetails);
+    //const userDetails = useSelector(state=>state.userDetails);
     const passengerDetails =  useSelector(state=>state.passengerDetails);
 
     useEffect(()=>{
@@ -36,7 +36,8 @@ export default function PaymentPage(){
         Object.keys(passengerData).length === 0 ||
         Object.keys(flightData).length === 0 || 
         Object.keys(selectedSeats).length === 0 || 
-        Object.keys(userDetails).length === 0 ){
+        //Object.keys(userDetails).length === 0 
+        ){
             navigate("/flightbooking");
         }
     },[]);
@@ -101,7 +102,7 @@ export default function PaymentPage(){
         newObj.ticketId = Math.random().toString().slice(2);
         newObj.selectedSeats = selectedSeats;
         newObj.userId = localStorage.getItem("userid");
-        newObj.userName = userDetails.name;
+        //newObj.userName = userDetails.name;
         newObj.passengerDetails = passengerDetails;
         newObj.passengerSeatConfigurationDetails = passengerSeatConfigurationDetails;
 
