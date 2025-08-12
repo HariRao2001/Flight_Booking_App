@@ -25,8 +25,8 @@ export default function PassengerDetails(){
     if(!localStorage.getItem("userid")){
         return <PageNotFound />;
     };
-    console.log(arr.length);
-    if(arr.length == 0){
+    if(arr.length === 0){
+        console.log("Exec");
         navigate("/flightdetails");
         return;
     }
