@@ -42,7 +42,7 @@ function App() {
     { path:"/flightbooking", element:<Suspense fallback={<Loading />}><FlightBooking /></Suspense> },
     { path:"/searchresult", element:<Suspense fallback={<Loading />}><SearchResult /></Suspense> },
     { path:"/flightdetails", element:<Suspense fallback={<Loading />}><FlightDetails /></Suspense> },
-    { path:"/passengerdetails", element:<PassengerDetails />},
+    { path:"/passengerdetails", element:<Suspense fallback={<Loading />}><PassengerDetails /></Suspense>},
     { path:"/seatbooking", element : <Suspense fallback={<Loading />}><SeatBooking /></Suspense>},
     { path:"/paymentpage", element: <Suspense fallback={<Loading />}><PaymentPage /></Suspense> },
     { path:"/ibp", element : <Suspense fallback={<Loading />}><IndividualBoardingPass /></Suspense> },
