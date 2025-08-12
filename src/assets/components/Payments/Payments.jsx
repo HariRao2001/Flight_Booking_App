@@ -37,8 +37,6 @@ export default function PaymentPage(){
         Object.keys(selectedSeats).length === 0
         //Object.keys(userDetails).length === 0 
         ){
-                console.log("Exec");
-
             navigate("/flightbooking");
         }
     },[passengerData.length, flightData.length, selectedSeats.length, navigate]);
