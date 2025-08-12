@@ -26,8 +26,9 @@ export default function PassengerDetails(){
         return <PageNotFound />;
     };
     console.log(arr.length);
-    if(arr.length === 0){
+    if(arr.length == 0){
         navigate("/flightdetails");
+        return;
     }
     
     return <div className="passengers_info_block">
