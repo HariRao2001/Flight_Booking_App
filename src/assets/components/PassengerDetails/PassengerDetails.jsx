@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { bookingActions } from "../../store/createSore";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, redirect } from "react-router-dom";
 
 import PageNotFound from "../../components/PageNotFound/PageNotFound";
 
@@ -21,10 +21,14 @@ export default function PassengerDetails(){
         dispatch(bookingActions.passengersDetailsHandler(userDetails)); 
         navigate("/seatbooking");
     }
-
+    
     if(!localStorage.getItem("userid")){
         return <PageNotFound />;
     };
+
+    if(arr.length === 0){
+        redirect("/flightdetails");
+    }
     
     return <div className="passengers_info_block">
         <p>Fill the passenger details</p>
