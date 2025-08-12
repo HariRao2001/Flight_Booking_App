@@ -39,7 +39,7 @@ export default function PaymentPage(){
         ){
             navigate("/flightbooking");
         }
-    },[]);
+    },[passengerData.length, flightData.length, selectedSeats.length, navigate]);
     
     function getCurrentDate(){
         const date = new Date();
