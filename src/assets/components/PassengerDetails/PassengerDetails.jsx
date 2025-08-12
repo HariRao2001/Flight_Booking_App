@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { bookingActions } from "../../store/createSore";
-
+import { useEffect }  from "react";
 import { useNavigate } from "react-router-dom";
 
 import PageNotFound from "../../components/PageNotFound/PageNotFound";
@@ -13,6 +13,13 @@ export default function PassengerDetails(){
     const selector = useSelector(state=>state.passengerFlightBookingDetails);
     const dispatch = useDispatch();
     arr = Array.from({ length: +selector.passengersCount });
+    useEffect(()=>{
+        if(arr.length === 0){
+            console.log("Exec");
+            navigate("/flightdetails");
+            return;
+        }
+    },[arr.length, navigate]);
     
     function submitHandler(e){
         e.preventDefault();
@@ -25,11 +32,7 @@ export default function PassengerDetails(){
     if(!localStorage.getItem("userid")){
         return <PageNotFound />;
     };
-    if(arr.length === 0){
-        console.log("Exec");
-        navigate("/flightdetails");
-        return;
-    }
+
     
     return <div className="passengers_info_block">
         <p>Fill the passenger details</p>
