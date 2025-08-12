@@ -32,10 +32,10 @@ export default function PaymentPage(){
 
     useEffect(()=>{
         if(
-        Object.keys(passengerData).length !== 0 ||
-        Object.keys(flightData).length !== 0 || 
-        Object.keys(selectedSeats).length !== 0 || 
-        Object.keys(userDetails).length !== 0 ){
+        Object.keys(passengerData).length === 0 ||
+        Object.keys(flightData).length === 0 || 
+        Object.keys(selectedSeats).length === 0 || 
+        Object.keys(userDetails).length === 0 ){
             navigate("/flightbooking");
         }
     },[]);
