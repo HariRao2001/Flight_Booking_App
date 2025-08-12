@@ -5,6 +5,7 @@ import masterCardIcon from "../../images/Mastercard.png";
 import payalIcon from "../../images/Paypal.png"
 import visaIcon from "../../images/Visa.png";
 
+import { useEffect } from "react";
 import {  useNavigate,Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -29,6 +30,16 @@ export default function PaymentPage(){
     const userDetails = useSelector(state=>state.userDetails);
     const passengerDetails =  useSelector(state=>state.passengerDetails);
 
+    useEffect(()=>{
+        if(
+        Object.keys(passengerData).length !== 0 ||
+        Object.keys(flightData).length !== 0 || 
+        Object.keys(selectedSeats).length !== 0 || 
+        Object.keys(userDetails).length !== 0 ){
+            navigate("/flightbooking");
+        }
+    },[]);
+    
     function getCurrentDate(){
         const date = new Date();
         return date.toLocaleDateString();
@@ -186,11 +197,7 @@ export default function PaymentPage(){
         }
     }
 
-    return(!localStorage.getItem("userid") ? <ErrorPage /> : (
-        Object.keys(passengerData).length !== 0 ||
-        Object.keys(flightData).length !== 0 || 
-        Object.keys(selectedSeats).length !== 0 || 
-        Object.keys(userDetails).length !== 0 ) ? 
+    return(!localStorage.getItem("userid") ? <ErrorPage /> : 
         (<div className="payment_block">
             <div className="payment_header_block">
                 <Link to="/searchresult"><img src={backIcon} alt="image not found"/></Link>
@@ -253,6 +260,6 @@ export default function PaymentPage(){
             <button className="payment_submit_btn" onSubmit={submitHandler}>Submit</button>
             <button className="payment_cancel_btn" type="reset" >Cancel</button>
         </form>
-    </div>) :  <FlightBooking />
+    </div>)
     )
 }
