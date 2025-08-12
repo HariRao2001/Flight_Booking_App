@@ -31,6 +31,7 @@ export default function PaymentPage(){
     const passengerDetails =  useSelector(state=>state.passengerDetails);
 
     useEffect(()=>{
+        console.log(object.keys(passengerData).length,  Object.keys(flightData).length, Object.keys(selectedSeats).length, Object.keys(userDetails).length);
         if(
         Object.keys(passengerData).length === 0 ||
         Object.keys(flightData).length === 0 || 
