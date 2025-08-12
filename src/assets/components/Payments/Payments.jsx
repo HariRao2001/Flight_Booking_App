@@ -32,6 +32,7 @@ export default function PaymentPage(){
 
     useEffect(()=>{
         if(
+    console.log("Exec");
         Object.keys(passengerData).length === 0 ||
         Object.keys(flightData).length === 0 || 
         Object.keys(selectedSeats).length === 0
@@ -218,18 +219,18 @@ export default function PaymentPage(){
             </div>
             <hr />
             <div className="payment_details_timings_block">
-                <p>{flightData.airplaneTimings.start}</p>
+                <p>{flightData?.airplaneTimings?.start}</p>
                 <img src={airportFromIcon} alt="image_not_found"></img>
-                <p>{flightData.airplaneTimings.end}</p>
+                <p>{flightData?.airplaneTimings?.end}</p>
             </div>
             <div className="payment_details_places_block">
-                <p>{flightData.airplaneTravellingDetails.from}</p>
-                <p>{flightData.airplaneTravellingDetails.to}</p>
+                <p>{flightData?.airplaneTravellingDetails?.from}</p>
+                <p>{flightData?.airplaneTravellingDetails?.to}</p>
             </div>
             <hr />
             <div className="payment_details_price_block">
                 <p>Total</p>
-                <h3>{flightData.passengersCount * flightData.price}</h3>
+                <h3>{flightData?.passengersCount * flightData?.price}</h3>
             </div>
         </div>
         <form className="payment_form_block" onSubmit={submitHandler}>
