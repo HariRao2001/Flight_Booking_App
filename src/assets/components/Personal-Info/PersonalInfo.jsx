@@ -195,7 +195,7 @@ export default function PersonalInfo(){
             </fieldset>
             {error &&<p>{error}</p>}
             {successMessage && <div className="success_message_block"><p>{successMessage}</p></div>}
-            <button className="confirm_btn" disabled={isSubmitted}>{searchParams.get("mode") === "signup" ? "Signup" : "Login"}</button>
+            <button className="confirm_btn" disabled={isSubmitted} style={{cursor: isSubmitted ? "notAllowed" : "pointer" }}>{searchParams.get("mode") === "signup" ? "Signup" : "Login"}</button>
             <Link to={`?mode=${searchParams.get("mode") === "signup" ? "login" : "signup"}`}>{searchParams.get("mode") === "signup" ? "Already have an account?" : "Create a new account" }</Link>
         </form>
       
