@@ -16,8 +16,8 @@ export default function FlightBooking(){
 
     useEffect(()=>{
         if(!localStorage.getItem("userid")){
-            // navigate("/error");
-            return redirect("/error");
+            navigate("/error");
+         
         }
     },[navigate]);
 
