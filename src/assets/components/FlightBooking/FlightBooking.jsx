@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { bookingActions } from "../../store/createSore";
 
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, redirect } from "react-router-dom";
 
 import { airplanesStartingPoints, airplanesEndingPoints, airplaneClasses } from "../../Dummy Data/AIRPLANE_DUMMY_DATA";
 
@@ -16,7 +16,8 @@ export default function FlightBooking(){
 
     useEffect(()=>{
         if(!localStorage.getItem("userid")){
-            navigate("/error");
+            // navigate("/error");
+            redirect("/error");
         }
     },[navigate]);
 
