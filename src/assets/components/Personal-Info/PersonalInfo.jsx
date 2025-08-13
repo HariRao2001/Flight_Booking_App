@@ -18,7 +18,8 @@ export default function PersonalInfo(){
     const [searchParams] = useSearchParams();
     const [error, setError] =useState("");
     const [successMessage, setSuccessMessage] = useState("");
-
+    const [isSubmitted, setIsSubmitted] = useState(false); 
+    
     useEffect(()=>{
         setError("");
     },[searchParams]);
@@ -58,7 +59,9 @@ export default function PersonalInfo(){
         }
         else{
             async function run(){
-                const response = await fetch("https://flights-data.onrender.com/usersDetails");
+                try{
+                    setIsSubmitted(true);
+                    const response = await fetch("https://flights-data.onrender.com/usersDetails");
                     if(!response.ok){
                         setError("Something went wrong.please try again");
                         return;
@@ -107,8 +110,13 @@ export default function PersonalInfo(){
                 }
                 setError("");
             }
+                }catch(error){
+                    console.error(error);
+                }finally{
+                    setIsSubmitted(false);
+                }
+                
             run();
-            
         }
     }
 
