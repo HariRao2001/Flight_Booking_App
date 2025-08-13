@@ -109,12 +109,12 @@ export default function PersonalInfo(){
                     }, 2000);
                 }
                 setError("");
-            }
                 }catch(error){
-                    console.error(error);
+                  console.error(error);
                 }finally{
-                    setIsSubmitted(false);
+                  setIsSubmitted(false);
                 }
+            }
                 
             run();
         }
