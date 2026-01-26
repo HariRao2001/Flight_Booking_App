@@ -80,11 +80,25 @@ export default function PaymentPage(){
             return;
         }
 
-        if(userEnteredData.expiryDate.indexOf("/") !== 2 || 
-            userEnteredData.expiryDate.slice(0,2) > 12 ||
-            userEnteredData.expiryDate.slice(3,7) < currentYear ||
-            !(new Date(`${userEnteredDate.slice(3,7)}/${userEnteredDate.slice(0,2)}`) > new Date(`${currentYear}/${currentMonth}`))
-        ){
+        //Format to check the MM/YYYY format
+        if (!/^\d{2}\/\d{4}$/.test(userEnteredDate)) {
+            setError("Enter expiry date in MM/YYYY format");
+            return;
+        }
+
+        const expMonth = Number(userEnteredDate.slice(0, 2));
+        const expYear = Number(userEnteredDate.slice(3, 7));
+
+        if (expMonth < 1 || expMonth > 12) {
+            setError("Enter a valid expiry month");
+            return;
+        }
+
+        // Expiry = last day of the expiry month
+        const expiryDate = new Date(expYear, expMonth, 0, 23, 59, 59);
+        const now = new Date();
+
+        if (expiryDate < now) {
             setError("Enter a valid expiry date");
             return;
         }
@@ -185,12 +199,28 @@ export default function PaymentPage(){
         if(e.target.name === "expiryDate"){
             const userEnteredDate = e.target.value;
             const currentYear = new Date().getFullYear();
-            const currentMonth = new Date().getMonth();
+            //Format to check the MM/YYYY format
+            if (!/^\d{2}\/\d{4}$/.test(userEnteredDate)) {
+                setError("Enter expiry date in MM/YYYY format");
+                return;
+            }
 
-            if(e.target.value.indexOf("/") !== 2 || 
-            e.target.value.slice(0,2) > 12 ||
-            e.target.value.slice(3,7) < currentYear ||
-            !(new Date(`${userEnteredDate.slice(3,7)}/${userEnteredDate.slice(0,2)}`) > new Date(`${currentYear}/${currentMonth}`))
+            const expMonth = Number(userEnteredDate.slice(0, 2));
+            const expYear = Number(userEnteredDate.slice(3, 7));
+
+            if (expMonth < 1 || expMonth > 12) {
+                setError("Enter a valid expiry month");
+                return;
+            }
+
+            // Expiry = last day of the expiry month
+            const expiryDate = new Date(expYear, expMonth, 0, 23, 59, 59);
+            const now = new Date();
+
+            if (expiryDate < now) {
+                setError("Enter a valid expiry date");
+                return;
+            }
         ){
             setError("Enter a valid expiry date");
             return;
