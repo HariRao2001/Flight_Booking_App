@@ -221,10 +221,6 @@ export default function PaymentPage(){
                 setError("Enter a valid expiry date");
                 return;
             }
-        ){
-            setError("Enter a valid expiry date");
-            return;
-        }
         }
     }
 
